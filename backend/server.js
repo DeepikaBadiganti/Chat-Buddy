@@ -55,7 +55,9 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://chat-buddy-x2u4.onrender.com",
+    origin: ["https://chat-buddy-x2u4.onrender.com", "http://localhost:3004"],
+    methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 

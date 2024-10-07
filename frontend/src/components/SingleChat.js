@@ -16,7 +16,7 @@ import animationData from '../animations/typing.json'
 import Picker from "emoji-picker-react";
 import { MdMoreVert } from "react-icons/md";
 
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = "https://chat-buddy-x2u4.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({fetchAgain,setFetchAgain}) => {
@@ -88,7 +88,10 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
     }
 
       useEffect(() => {
-        socket = io(ENDPOINT);
+        socket = io(ENDPOINT, {
+          transports: ["websocket"],
+          withCredentials: true,
+        });
         socket.emit("setup",user)
         socket.on("connected",() => setSocketConnected(true))
         socket.on("typing",() => setIsTyping(true))
