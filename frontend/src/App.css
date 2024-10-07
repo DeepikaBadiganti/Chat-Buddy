@@ -1,0 +1,52 @@
+ @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+ 
+ body {
+   margin: 0;
+   overflow: hidden;
+   background-color: #f0f0f0;
+ }
+
+ .App{
+    display: flex;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+ }
+
+ .animated-background {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   animation: animateBackground 20s linear infinite;
+   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+   background-size: 400% 400%;
+ }
+
+ @keyframes animateBackground {
+   0% {
+     background-position: 0% 50%;
+   }
+
+   50% {
+     background-position: 100% 50%;
+   }
+
+   100% {
+     background-position: 0% 50%;
+   }
+ }
+
+ ::-webkit-scrollbar {
+   width: 0px;
+ }
+
+ ::-webkit-scrollbar-track{
+    background: rgba(136,136,136,0.281);
+ }
+
+::-webkit-scrollbar-thumb{
+  background:  #555;
+}
